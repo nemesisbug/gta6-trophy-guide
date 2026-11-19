@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Neon — GTA 6 Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: checklist, roadmap to the platinum, missables, and a cited guide for every trophy.">
+<link rel="stylesheet" href="css/neon.css">
+</head>
+<body>
+<header class="sunset">
+  <div class="brand">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Vice City <span class="neon">Neon</span></h1>
+    <p class="tagline">The offline trophy guide &amp; tracker for Leonida. Every trophy, every guide, no network needed.</p>
+  </div>
+  <div class="progress-card" id="progressCard" aria-live="polite">
+    <div class="big-count"><span id="earnedCount">0</span><span class="of">/ 55</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <p class="progress-label"><span id="progressPct">0%</span> to the platinum</p>
+    <div class="grade-chips" id="gradeChips"></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <a href="#/checklist" class="tab" data-view="checklist">Checklist</a>
+  <a href="#/roadmap" class="tab" data-view="roadmap">Roadmap to Platinum</a>
+  <a href="#/missables" class="tab" data-view="missables">Missables</a>
+  <span class="tab-spacer"></span>
+  <label class="spoiler-toggle" title="Hide the names and descriptions of hidden trophies until you earn them">
+    <input type="checkbox" id="spoilerToggle"> Spoiler-free mode
+  </label>
+</nav>
+
+<section class="toolbar" id="toolbar" aria-label="Find and filter trophies">
+  <input type="search" id="searchBox" placeholder="Search trophies — try &quot;meditation&quot; or &quot;race&quot; ( / )" aria-label="Search trophies">
+  <label>Kind
+    <select id="kindFilter">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="side">Side</option>
+      <option value="collectible">Collectible</option>
+      <option value="activity">Activity</option>
+      <option value="exploration">Exploration</option>
+      <option value="combat">Combat</option>
+      <option value="money">Money</option>
+      <option value="misc">Misc</option>
+    </select>
+  </label>
+  <label>Grade
+    <select id="gradeFilter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Status
+    <select id="statusFilter">
+      <option value="all">Earned + missing</option>
+      <option value="earned">Earned only</option>
+      <option value="missing">Missing only</option>
+    </select>
+  </label>
+  <span class="toolbar-buttons">
+    <button type="button" id="exportBtn">Export progress</button>
+    <label class="import-label">Import progress <input type="file" id="importFile" accept="application/json,.json"></label>
+    <button type="button" id="resetBtn" class="quiet">Reset</button>
+  </span>
+  <p class="result-count" id="resultCount" aria-live="polite"></p>
+</section>
+
+<main id="main">
+  <section id="view-checklist" class="view">
+    <div class="checklist-layout">
+      <div class="list-wrap">
+        <ul class="trophy-list" id="trophyList"></ul>
+        <p class="empty-note" id="emptyNote" hidden>No trophies match these filters. Try clearing the search or a filter.</p>
+      </div>
+      <aside class="detail-pane" id="detailPane" aria-label="Trophy guide"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <div class="roadmap-intro">
+      <h2>Roadmap to the platinum</h2>
+      <p>Built from the official trophy descriptions. Roughly 200 hours in total, by community estimates — about 50–60 hours for the story, the rest for side content, collectibles and cleanup. Play the stages in order: the story first, while the one missable is still in reach, then the world opens up for everything else.</p>
+      <p class="roadmap-progress" id="roadmapProgress"></p>
+    </div>
+    <ol class="stages" id="stageList"></ol>
+  </section>
+
+  <section id="view-missables" class="view" hidden>
+    <div class="roadmap-intro">
+      <h2>Missable trophies</h2>
+      <p>Only one trophy is reported as possibly missable — and the rest of this page is a watch list of single-moment trophies, so you know where to keep a manual save. Nothing here is guesswork dressed up as fact: where a trigger is not yet confirmed in a published guide, this page says so.</p>
+    </div>
+    <div id="missableList"></div>
+    <div class="save-advice">
+      <h3>Before you play: two habits that save a platinum</h3>
+      <ul>
+        <li><strong>Keep manual saves</strong> before big story missions. There is no mission replay for the Chapter 1 meditation spot, and several hidden trophies are tied to single story moments.</li>
+        <li><strong>Do not use cheats.</strong> Turning on a cheat disables trophies, and you cannot save once one is used — the codes only unlock after the story in any case.</li>
+        <li><strong>Meditate on Lucia's balcony in Chapter 1.</strong> It is the first of 18 meditation spots and the only one that can be lost. See Positive Mental Attitude below.</li>
+      </ul>
+      <p class="source-note">Cheats disable trophies: Planet GTA 6, citing PowerPyx, GameSpot and PC Gamer.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Names and descriptions are PlayStation's official trophy list (Exophase &amp; PSNProfiles, 18 Nov 2026). Every guide is written for this page in our own words, with its sources cited beside it. This guide works fully offline — it fetches nothing, and its source links open only when you follow them.</p>
+  <p>Vice City Neon is an unofficial fan guide. Not affiliated with Rockstar Games. No official artwork or logos are used.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

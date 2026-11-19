@@ -126,17 +126,24 @@ export function renderDetail(trophy, state, onToggle) {
     : trophy.guide));
 
   pane.appendChild(el('h3', null, 'Sources'));
-  const list = el('ul', 'source-list');
-  for (const source of trophy.sources || []) {
-    const item = el('li');
-    const link = el('a', null, source.name);
-    link.href = source.url;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    item.appendChild(link);
-    list.appendChild(item);
+  if (hidden) {
+    // Source names name the guide (and so the trophy) — mask them like the
+    // description and guide above, or picking a hidden trophy would leak
+    // its identity through the detail pane.
+    pane.appendChild(el('p', 'official', 'Spoiler-free mode is on. Earn this trophy to reveal its sources.'));
+  } else {
+    const list = el('ul', 'source-list');
+    for (const source of trophy.sources || []) {
+      const item = el('li');
+      const link = el('a', null, source.name);
+      link.href = source.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      item.appendChild(link);
+      list.appendChild(item);
+    }
+    pane.appendChild(list);
   }
-  pane.appendChild(list);
 
   const actions = el('div', 'detail-actions');
   const toggle = el('button', null, earned ? 'Mark as missing' : 'Mark as earned');
